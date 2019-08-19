@@ -39,7 +39,7 @@ public class CheckCodeServlet extends HttpServlet {
         //填充图片
         g.fillRect(0, 0, width, height);
 
-        //产生4个随机验证码，12Ey
+        //产生4个随机验证码
         String checkCode = getCheckCode();
         //将验证码放入HttpSession中
         request.getSession().setAttribute("CHECKCODE_SERVER", checkCode);
@@ -79,5 +79,6 @@ public class CheckCodeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
     }
 }

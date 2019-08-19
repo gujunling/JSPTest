@@ -24,10 +24,13 @@ public class AddUserServlet extends HttpServlet {
 
         //设置编码
         request.setCharacterEncoding("utf-8");
+
         //获取数据
         Map<String, String[]> map = request.getParameterMap();
+
         //封装对象
         User user = new User();
+
         try {
             BeanUtils.populate(user,map);
         } catch (IllegalAccessException e) {
@@ -38,6 +41,7 @@ public class AddUserServlet extends HttpServlet {
         //调用service保存
         UserService service = new UserServiceImpl();
         service.addUser(user);
+
         //跳转到userListServlet，没有共享数据，选择使用重定向
         response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
 
@@ -45,5 +49,6 @@ public class AddUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
     }
 }

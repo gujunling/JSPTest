@@ -20,14 +20,18 @@ public class DelSelectedServlet extends HttpServlet {
 
           //获取所有的id
         String[] ids = request.getParameterValues("uid");
+
         //调用service进行删除
         UserService service  = new UserServiceImpl();
         service.delSelectedUser(ids);
+
         //跳转到所有的servlet
         response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
     }
 }

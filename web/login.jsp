@@ -25,7 +25,7 @@
                 var vcode = document.getElementById("vcode");
 
                 //设置其src属性，添加时间戳
-                vcode.src ="${pageContext.request.contextPath}/checkCodeServlet?time="+new Date().getTime();
+                vcode.src = "${pageContext.request.contextPath}/checkCodeServlet?time=" + new Date().getTime();
 
             }
         </script>
@@ -50,7 +50,8 @@
                            style="width: 120px;"/>
                     <a href="javascript:refreshCode()">
                         <img src="${pageContext.request.contextPath}/checkCodeServlet"
-                             title="看不清点击刷新" id="vcode"/></a>
+                             title="看不清点击刷新" id="vcode"/>
+                    </a>
                 </div>
                 <hr/>
                 <div class="form-group" style="text-align: center;">
@@ -64,6 +65,8 @@
                     <span>&times;</span></button>
                 <strong>${login_msg}</strong>
             </div>
+
         </div>
+
     </body>
 </html>

@@ -23,6 +23,7 @@ public class FindUserByPageServlet extends HttpServlet {
 
         //设置编码
         request.setCharacterEncoding("utf-8");
+
         //获取参数
         String currentPage = request.getParameter("currentPage"); //当前页码
         String rows = request.getParameter("rows");  //每页显示的条数
@@ -54,5 +55,6 @@ public class FindUserByPageServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
     }
 }

@@ -23,14 +23,14 @@
         <div class="container" style="width: 400px;">
             <h3 style="text-align: center;">修改联系人</h3>
             <form action="${pageContext.request.contextPath}/updateUserServlet" method="post">
-                <%--隐藏域，获取用户id ,必须在form表单中，可以在form表单中的任意位置--%>
 
+                <%--隐藏域，获取用户id ,必须在form表单中，可以在form表单中的任意位置--%>
                 <input type="hidden" name="id" value="${user.id}">
+
                 <div class="form-group">
                     <label for="name">姓名：</label>
                     <input type="text" class="form-control" id="name" name="name" value="${user.name}"
-                           readonly="readonly"
-                           placeholder="请输入姓名"/>
+                           readonly="readonly" placeholder="请输入姓名"/>
                 </div>
 
                 <div class="form-group">
@@ -56,6 +56,7 @@
                 <div class="form-group">
                     <label for="address">籍贯：</label>
                     <select id="address" name="address" class="form-control">
+
                         <c:if test="${user.address == '河南'}">
 
                             <option value="河南" selected>河南</option>
@@ -64,6 +65,7 @@
                             <option value="湖南">湖南</option>
 
                         </c:if>
+
                         <c:if test="${user.address == '广东'}">
                             <option value="河南">河南</option>
                             <option value="广东" selected>广东</option>
@@ -71,6 +73,7 @@
                             <option value="湖南">湖南</option>
 
                         </c:if>
+
                         <c:if test="${user.address == '广西'}">
                             <option value="河南">河南</option>
                             <option value="广东">广东</option>
@@ -78,6 +81,7 @@
                             <option value="湖南">湖南</option>
 
                         </c:if>
+
                         <c:if test="${user.address == '湖南'}">
                             <option value="河南">河南</option>
                             <option value="广东">广东</option>
@@ -85,6 +89,7 @@
                             <option value="湖南" selected>湖南</option>
 
                         </c:if>
+
                     </select>
                 </div>
 
@@ -104,6 +109,7 @@
                     <input class="btn btn-default" type="reset" value="重置"/>
                     <input class="btn btn-default" type="button" value="返回"/>
                 </div>
+
             </form>
         </div>
     </body>

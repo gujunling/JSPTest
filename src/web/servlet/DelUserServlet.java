@@ -24,13 +24,14 @@ public class DelUserServlet extends HttpServlet {
         //调用service删除
         UserService service = new UserServiceImpl();
         service.deleteUser(id);
+
         //跳转到查询所有的servlet
         response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
 
-        //
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
+
     }
 }
