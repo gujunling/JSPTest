@@ -39,7 +39,7 @@ public class AddUserServlet extends HttpServlet {
         UserService service = new UserServiceImpl();
         service.addUser(user);
         //跳转到userListServlet，没有共享数据，选择使用重定向
-        response.sendRedirect(request.getContextPath()+"/userListServlet");
+        response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
 
     }
 

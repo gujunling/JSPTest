@@ -30,7 +30,6 @@ public class FindUserServlet extends HttpServlet {
         //转发到update.jsp
         request.getRequestDispatcher("/update.jsp").forward(request,response);
 
-        // response.sendRedirect(request.getContextPath()+"/update.jsp");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

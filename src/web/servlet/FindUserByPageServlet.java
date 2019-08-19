@@ -26,8 +26,6 @@ public class FindUserByPageServlet extends HttpServlet {
         //获取参数
         String currentPage = request.getParameter("currentPage"); //当前页码
         String rows = request.getParameter("rows");  //每页显示的条数
-//        int totalPage = Integer.parseInt(request.getParameter("totalPage")) ;
-
 
         if (currentPage == null || "".equals(currentPage)){
 
@@ -37,11 +35,6 @@ public class FindUserByPageServlet extends HttpServlet {
             rows = "5";
 
         }
-        /*if (currentPage.equals(totalPage)){
-
-            currentPage = "totalPage";
-        }*/
-
 
         //获取条件查询参数：
         Map<String, String[]> condition = request.getParameterMap();

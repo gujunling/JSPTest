@@ -24,7 +24,7 @@ public class DelSelectedServlet extends HttpServlet {
         UserService service  = new UserServiceImpl();
         service.delSelectedUser(ids);
         //跳转到所有的servlet
-        response.sendRedirect(request.getContextPath()+"/userListServlet");
+        response.sendRedirect(request.getContextPath()+"/findUserByPageServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
