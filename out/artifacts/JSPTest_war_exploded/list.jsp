@@ -77,11 +77,22 @@
                     }
                 }
             }
+
+            function close() {
+                location.href = "${pageContext.request.contextPath}/login.jsp";
+
+            }
         </script>
 
     </head>
     <body>
         <div style="color: darkorchid;text-align: center;font-size: 30px">${user.name},欢迎您</div>
+
+        <div style="color: red; float: right ;margin-right: 120px ;font-size: 20px;">
+            <a class="btn btn-warning "
+               href="javascript:close(0);">退出系统
+            </a>
+        </div>
 
         <div class="container">
             <h3 style="text-align: center">用户信息列表</h3>
@@ -109,8 +120,8 @@
             </div>
 
             <div style="float: right;margin : 5px">
-                <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a>
-                <a class="btn btn-primary" href="javascript:void(0);" id="delselected">删除选中</a>
+                <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加新用户</a>
+                <a class="btn btn-primary" href="javascript:void(0);" id="delselected">批量删除</a>
             </div>
             <form id="formdelsel" action="${pageContext.request.contextPath}/delSelectedServlet" method="post">
                 <table border="1" class="table table-bordered table-hover">
@@ -158,7 +169,7 @@
 
                             <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage - 1}&rows=5&name=${condition.name[0]}&address=${condition.address[0]}&email=${condition.email[0]}"
                                aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
+                                <span aria-hidden="true">上一页</span>
                             </a>
                             <%--注意，在&rows=5&name中，5&name之间不能有空格，有空格的话，字符串"5"不能转化为int类型--%>
                         </li>
@@ -187,7 +198,7 @@
                             </c:if>
                             <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage + 1}&rows=5&name=${condition.name[0]}&address=${condition.address[0]}&email=${condition.email[0]}"
                                aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
+                                <span aria-hidden="true">下一页</span>
                             </a>
                         </li>
                         <span style="font-size: 25px;margin-left: 5px">

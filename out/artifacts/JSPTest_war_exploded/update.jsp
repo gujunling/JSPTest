@@ -21,7 +21,7 @@
     </head>
     <body>
         <div class="container" style="width: 400px;">
-            <h3 style="text-align: center;">修改联系人</h3>
+            <h3 style="text-align: center;">修改用户信息</h3>
             <form action="${pageContext.request.contextPath}/updateUserServlet" method="post">
 
                 <%--隐藏域，获取用户id ,必须在form表单中，可以在form表单中的任意位置--%>
