@@ -23,7 +23,13 @@
         <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
         <script src="js/jquery-2.1.0.min.js"></script>
         <!-- 3. 导入bootstrap的js文件 -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js">
+
+
+
+
+
+        </script>
     </head>
     <body>
         <div class="container">
@@ -66,11 +72,16 @@
                 </div>
 
                 <div class="form-group" style="text-align: center">
-                    <input class="btn btn-primary" type="submit" value="提交" />
-                    <input class="btn btn-default" type="reset" value="重置" />
-                    <input class="btn btn-default" type="button" value="返回" />
+                    <input class="btn btn-primary" type="submit" value="提交"/>
+                    <input class="btn btn-default" type="reset" value="重置"/>
+                  <%--  <input onclick="revert" class="btn btn-default" type="button" value="返回"/>--%>
+                    <a class="btn btn-default btn-sm"
+                       href="javascript:history.go(-1)">返回
+                    </a>
                 </div>
+
             </form>
         </div>
+
     </body>
 </html>

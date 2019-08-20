@@ -108,7 +108,6 @@
                 </form>
             </div>
 
-
             <div style="float: right;margin : 5px">
                 <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a>
                 <a class="btn btn-primary" href="javascript:void(0);" id="delselected">删除选中</a>
@@ -137,14 +136,14 @@
                             <td>${user.qq}</td>
                             <td>${user.email}</td>
                             <td><a class="btn btn-default btn-sm"
-                                   href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
+                                   href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改
+                            </a>&nbsp;
                                 <a class="btn btn-default btn-sm"
-                                   href="javascript:deleteUser(${user.id});">删除</a>
-                                    <%----%>
+                                   href="javascript:deleteUser(${user.id});">删除
+                                </a>
                             </td>
                         </tr>
                     </c:forEach>
-
                 </table>
             </form>
             <div>
@@ -180,7 +179,12 @@
 
                             </c:if>
                         </c:forEach>
+                        <c:if test="${pb.currentPage == pb.totalPage}">
+                        <li class="disabled">
+                            </c:if>
+                            <c:if test="${pb.currentPage != pb.totalPage}">
                         <li>
+                            </c:if>
                             <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage + 1}&rows=5&name=${condition.name[0]}&address=${condition.address[0]}&email=${condition.email[0]}"
                                aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
